@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Marketing Services</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    body {
+      background: #050a1f;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .dm-card {
+      min-height: 320px;
+      transition: transform 0.3s;
+    }
+
+    .dm-card:hover {
+      transform: scale(1.05);
+    }
+
+    .dm-icon {
+      font-size: 1.8rem;
+      margin-right: 10px;
+    }
+
+    .service-points {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.75rem;
+    }
+
+    .service-points li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #ccc;
+    }
+
+    .service-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, #00ff95 0%, #28a745 80%);
+      border-radius: 50%;
+      box-shadow: 0 0 8px #00ff95;
+    }
+
+    .btn-learn {
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container py-5">
+    <h1 class="text-center display-5 fw-bold text-white mb-5 animate__animated animate__fadeInDown">
+      Digital Marketing Services
+    </h1>
+    <div class="row g-4" id="dmServicesContainer"></div>
+  </div>
+
+  <script>
+    const dmServices = [
+      {
+        title: "Google & YouTube Ads",
+        icon: "fa-brands fa-google",
+        desc: ["Boost visibility with Google Ads.", "Engage video audience via YouTube campaigns.", "Target specific demographics."],
+        color: "text-danger"
+      },
+      {
+        title: "Facebook & Instagram Ads",
+        icon: "fa-brands fa-facebook",
+        desc: ["Run targeted Facebook ads.", "Maximize reach on Instagram.", "Engage with visual content.", "Drive traffic to your website."],
+        color: "text-primary"
+      },
+      {
+        title: "Social Media Marketing",
+        icon: "fa-brands fa-instagram",
+        desc: ["Grow presence on major platforms.", "Strategize content & scheduling.", "Strategize content & scheduling.", "Engage with followers."],
+        color: "text-warning"
+      },
+      {
+        title: "GMB Listing",
+        icon: "fa-solid fa-map-marker-alt",
+        desc: [
+          "Get listed on Google My Business.",
+          "Optimize for local search visibility.",
+          "Appear in Google Maps results.",
+          "Attract more local customers.",
+          "Manage reviews and customer interactions."
+        ],
+        color: "text-success"
+      },
+      {
+        title: "Local SEO",
+        icon: "fa-solid fa-location-dot",
+        desc: ["Improve local rankings.", "Drive nearby search traffic.", "Optimize Google My Business.", "Target local keywords."],
+        color: "text-info"
+      },
+      {
+        title: "Search Engine Optimisation",
+        icon: "fa-solid fa-search",
+        desc: ["Boost site visibility in Google.", "Use keywords, backlinks & content SEO.", "Improve organic traffic.", "Optimize for search engines."],
+        color: "text-light"
+      },
+      {
+        title: "WhatsApp API",
+        icon: "fa-brands fa-whatsapp",
+        desc: ["Integrate official WhatsApp API.", "Automate customer messaging & response.", "Enhance customer engagement.", "Streamline communication."],
+        color: "text-success"
+      },
+      {
+        title: "WhatsApp BlueTick",
+        icon: "fa-solid fa-circle-check",
+        desc: ["Verify WhatsApp Business account.", "Get official Blue Tick badge.", "Build trust with customers.", "Enhance brand credibility."],
+        color: "text-primary"
+      }
+    ];
+
+    const container = document.getElementById('dmServicesContainer');
+
+    dmServices.forEach(service => {
+      const col = document.createElement('div');
+      col.className = 'col-md-6 col-lg-4';
+
+      // Format description into <li> list
+      const descList = Array.isArray(service.desc)
+        ? `<ul class="service-points">${service.desc.map(point => `<li>${point}</li>`).join('')}</ul>`
+        : `<p class="card-text text-light">${service.desc}</p>`;
+
+      col.innerHTML = `
+        <div class="card bg-dark border ${service.color} shadow dm-card h-100 animate__animated animate__fadeInUp">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold ${service.color}">
+              <i class="${service.icon} dm-icon"></i> ${service.title}
+            </h5>
+            ${descList}
+            <a href="#" class="btn btn-outline-light mt-3 btn-learn">Learn More</a>
+          </div>
+        </div>
+      `;
+      container.appendChild(col);
+    });
+  </script>
+</body>
+
+</html>

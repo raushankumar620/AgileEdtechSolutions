@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Development Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: #f5f5f5;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #00c9ff, #92fe9d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #ddd;
+      margin-top: 1rem;
+    }
+
+    .hero button {
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background: linear-gradient(45deg, #00c9ff, #92fe9d);
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    .section {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(90deg, #00f2fe, #4facfe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #232526, #414345);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      border-color: #00c9ff;
+    }
+
+    .card img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      color: #00f2fe;
+    }
+
+    .card p {
+      color: #ccc;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .cta {
+      background: linear-gradient(to right, #43cea2, #185a9d);
+      padding: 4rem 1rem;
+      color: #fff;
+    }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #eee;
+    }
+
+    .cta button {
+      background: linear-gradient(45deg, #00c9ff, #92fe9d);
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1 class="animate__animated animate__fadeIn">Build & Scale with Innovative Apps 🚀</h1>
+      <p class="animate__animated animate__fadeIn animate__delay-1s">We create high-performance, cross-platform solutions tailored to your needs.</p>
+      <button onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Get Started 🚀</button>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <h2 class="animate__animated animate__fadeInUp">Our App Development Services 🚀</h2>
+    <div class="grid">
+      <!-- JS will populate cards here -->
+    </div>
+  </section>
+
+  <section class="section" style="background: #111;">
+    <h2 class="animate__animated animate__fadeInUp">Why Choose Our App Services? ✨</h2>
+    <div class="grid" id="benefits"></div>
+  </section>
+
+  <section class="cta text-center">
+    <h2 class="animate__animated animate__fadeIn">Start Building Your App Today 💡</h2>
+    <p>Let’s create the perfect app to take your business to the next level. Contact us now!</p>
+    <a href="contact.html"><button>Contact Us 📩</button></a>
+  </section>
+
+  <script>
+    const appServices = [
+      { title: "Mobile App Development", description: "Create high-quality mobile applications for iOS and Android.", icon: "https://cdn-icons-png.flaticon.com/128/11078/11078771.png" },
+      { title: "Web App Development", description: "Develop scalable, secure, and high-performance web applications.", icon: "https://cdn-icons-png.flaticon.com/128/7991/7991055.png" },
+      { title: "Cross-Platform Apps", description: "Develop apps for both iOS and Android with a single codebase.", icon: "https://cdn-icons-png.flaticon.com/128/14427/14427568.png" },
+      { title: "UI/UX Design", description: "Create intuitive, visually appealing interfaces for your apps.", icon: "https://cdn-icons-png.flaticon.com/128/13191/13191289.png" },
+      { title: "App Maintenance & Support", description: "Ongoing updates, bug fixes, and app improvements.", icon: "https://cdn-icons-png.flaticon.com/128/14991/14991775.png" },
+      { title: "App Integration Services", description: "Integrate your app with third-party APIs and services.", icon: "https://cdn-icons-png.flaticon.com/128/17336/17336041.png" },
+    ];
+
+    const appBenefits = [
+      { title: "Scalability", description: "Easily scale your app to millions of users.", icon: "https://cdn-icons-png.freepik.com/256/4266/4266814.png" },
+      { title: "Security", description: "We ensure top-level security for your app.", icon: "https://cdn-icons-png.freepik.com/256/18155/18155205.png" },
+      { title: "Performance", description: "Optimized for speed and efficiency.", icon: "https://cdn-icons-png.flaticon.com/128/888/888877.png" },
+      { title: "Innovation", description: "We use the latest tech to keep you ahead.", icon: "https://cdn-icons-png.freepik.com/256/1087/1087815.png" },
+    ];
+
+    const serviceContainer = document.querySelector("#services .grid");
+    appServices.forEach(service => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${service.icon}" alt="${service.title}" />
+        <h3>${service.title}</h3>
+        <p>${service.description}</p>
+      `;
+      serviceContainer.appendChild(card);
+    });
+
+    const benefitContainer = document.getElementById("benefits");
+    appBenefits.forEach(benefit => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${benefit.icon}" alt="${benefit.title}" />
+        <h3>${benefit.title}</h3>
+        <p>${benefit.description}</p>
+      `;
+      benefitContainer.appendChild(card);
+    });
+  </script>
+</body>
+
+</html>

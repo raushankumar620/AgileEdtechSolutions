@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agile Edtech Solutions - Design Services</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4fdf8;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .main-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .service-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 128, 0, 0.08);
+      margin-bottom: 4rem;
+      transition: 0.5s ease;
+    }
+
+    .service-section:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 128, 0, 0.15);
+    }
+
+    .service-section.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .text-section {
+      flex: 1;
+    }
+
+    .image-section {
+      flex: 1;
+      text-align: center;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      width: 420px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 10px 20px rgba(0, 128, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .image-section img:hover {
+      transform: scale(1.04);
+    }
+
+    .gradient-text {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #0ba360, #3cba92);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .text-section p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .gradient-text i {
+      color: #3cba92;
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 992px) {
+      .service-section,
+      .service-section.reverse {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .image-section img {
+        width: 100%;
+        height: auto;
+      }
+
+      .gradient-text {
+        font-size: 1.7rem;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+
+    <!-- Brand Kit Designing -->
+    <section class="service-section">
+      <div class="text-section">
+        <h2 class="gradient-text"><i class="fa-solid fa-palette"></i> Brand Kit Designing</h2>
+        <p>
+          A professional brand kit includes your logo, fonts, colors, and visual identity assets. It ensures consistency across all platforms—from social media to printed materials. <br><br>
+          We help define your brand's personality and create a visually appealing identity that communicates trust, professionalism, and uniqueness. Whether you're starting fresh or rebranding, our kits are designed to be memorable and scalable.
+        </p>
+      </div>
+      <div class="image-section">
+        <img src="img/gr4.avif" alt="Brand Kit Design">
+      </div>
+    </section>
+
+    <!-- Logo Designing -->
+    <section class="service-section reverse">
+      <div class="text-section">
+        <h2 class="gradient-text"><i class="fa-solid fa-pen-nib"></i> Logo Designing</h2>
+        <p>
+          Your logo is the face of your business. We craft modern, minimal, and memorable logos that reflect your brand's essence. <br><br>
+          Our process includes conceptualization, sketching, and refining until your logo is perfect. From icon-based to typographic logos, we ensure they look stunning across all media—web, print, merchandise, and more.
+        </p>
+      </div>
+      <div class="image-section">
+        <img src="img/gr3.jpg" alt="Logo Design">
+      </div>
+    </section>
+
+    <!-- Content Creation -->
+    <section class="service-section">
+      <div class="text-section">
+        <h2 class="gradient-text"><i class="fa-solid fa-photo-film"></i> Content Creation</h2>
+        <p>
+          Engaging content is the key to capturing attention in the digital world. We create stunning visuals, graphics, infographics, and carousel posts that drive interaction and brand awareness. <br><br>
+          Whether it's for social media, blogs, or advertising, our content is tailored to speak your brand's voice with clarity and creativity.
+        </p>
+      </div>
+      <div class="image-section">
+        <img src="img/gr1.avif" alt="Content Creation">
+      </div>
+    </section>
+
+    <!-- Video Editing -->
+    <section class="service-section reverse">
+      <div class="text-section">
+        <h2 class="gradient-text"><i class="fa-solid fa-clapperboard"></i> Video Editing</h2>
+        <p>
+          In the age of reels and YouTube, videos are your most powerful marketing tools. Our expert editors craft impactful stories through smooth transitions, cinematic effects, and brand-aligned visuals. <br><br>
+          From short social videos to detailed promotional content, we handle everything: motion graphics, subtitles, music sync, and more.
+        </p>
+      </div>
+      <div class="image-section">
+        <img src="img/gr2.jpg" alt="Video Editing">
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>

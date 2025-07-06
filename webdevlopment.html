@@ -1,0 +1,187 @@
+<!-- HTML, CSS, and JS version with Bootstrap card-style animation -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #050a1f;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .background {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom right, #081c15, #003c30, #012a24);
+      opacity: 0.3;
+      filter: blur(200px);
+      z-index: -1;
+    }
+
+    .container {
+      padding: 6rem 1rem;
+      text-align: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #4ade80, #3b82f6, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px #00000030;
+    }
+
+    p.description {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .buttons button {
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 0.5rem;
+      background: #1f2937;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .buttons button.active {
+      background: #22c55e;
+      color: black;
+      box-shadow: 0 0 20px #22c55e88;
+    }
+
+    .buttons button:hover {
+      background: #374151;
+    }
+
+    .card {
+      margin-top: 3rem;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      color: white;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card .icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      font-size: 1.25rem;
+      color: #eee;
+    }
+
+    .explore-btn {
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      background: #22c55e;
+      color: black;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .explore-btn:hover {
+      box-shadow: 0 0 10px #22c55e88;
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="container">
+    <h1 class="animate__animated animate__fadeInDown">Web Development Services</h1>
+    <p class="description animate__animated animate__fadeInUp">Premium, high-performance web solutions tailored for your success.</p>
+    <div class="buttons" id="service-buttons"></div>
+    <div id="card-wrapper"></div>
+  </div>
+
+  <script>
+    const services = [
+      { title: "Frontend Development", desc: "Interactive, blazing-fast UI using React, Next.js, and Vue.", icon: "fa-laptop-code", bg: "linear-gradient(to bottom right, #22c55e, #0f766e, #06b6d4)" },
+      { title: "Backend Development", desc: "Secure, scalable backend with Node.js, Python, and PHP.", icon: "fa-server", bg: "linear-gradient(to bottom right, #3b82f6, #4338ca, #8b5cf6)" },
+      { title: "Full Stack Solutions", desc: "Complete web solutions with seamless frontend & backend integration.", icon: "fa-code", bg: "linear-gradient(to bottom right, #facc15, #ea580c, #ef4444)" },
+      { title: "E-Commerce Development", desc: "High-converting eCommerce platforms with Shopify, WooCommerce & custom builds.", icon: "fa-shopping-cart", bg: "linear-gradient(to bottom right, #a855f7, #db2777, #ef4444)" },
+      { title: "CMS & WordPress", desc: "Custom WordPress, Webflow, and CMS solutions tailored for your business.", icon: "fa-wordpress", bg: "linear-gradient(to bottom right, #ef4444, #be123c, #f97316)" },
+      { title: "Cybersecurity", desc: "Robust security solutions: SSL, Firewalls, and Encryption.", icon: "fa-shield-halved", bg: "linear-gradient(to bottom right, #f97316, #ca8a04, #22c55e)" },
+      { title: "SEO & Growth", desc: "Technical SEO, content strategy, and performance marketing to rank higher.", icon: "fa-search", bg: "linear-gradient(to bottom right, #ec4899, #b91c1c, #8b5cf6)" },
+      { title: "Performance Optimization", desc: "Lightning-fast speeds, advanced caching, and UX enhancements.", icon: "fa-rocket", bg: "linear-gradient(to bottom right, #14b8a6, #1d4ed8, #6366f1)" },
+      { title: "UX/UI Design", desc: "Stunning and user-friendly interfaces designed with Figma & Adobe XD.", icon: "fa-paint-brush", bg: "linear-gradient(to bottom right, #6366f1, #1e40af, #0d9488)" }
+    ];
+
+    const buttonsContainer = document.getElementById("service-buttons");
+    const cardWrapper = document.getElementById("card-wrapper");
+    let currentIndex = 0;
+
+    function renderButtons() {
+      buttonsContainer.innerHTML = "";
+      services.forEach((service, i) => {
+        const btn = document.createElement("button");
+        btn.textContent = service.title;
+        btn.classList.toggle("active", i === currentIndex);
+        btn.onclick = () => {
+          currentIndex = i;
+          renderButtons();
+          renderCard();
+        };
+        buttonsContainer.appendChild(btn);
+      });
+    }
+
+    function renderCard() {
+      const service = services[currentIndex];
+
+      cardWrapper.innerHTML = `
+        <div class="card animate__animated animate__fadeInUp" style="background: ${service.bg};">
+          <div class="icon" style="color: white; text-shadow: 0 0 10px rgba(0,0,0,0.5);">
+            <i class="fas ${service.icon}"></i>
+          </div>
+          <h3>${service.title}</h3>
+          <p>${service.desc}</p>
+          <button class="explore-btn">Explore More</button>
+        </div>
+      `;
+    }
+
+    renderButtons();
+    renderCard();
+  </script>
+</body>
+</html>

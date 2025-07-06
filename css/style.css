@@ -1,0 +1,1257 @@
+/********** Template CSS **********/
+:root {
+    --primary: #06A3DA;
+    --secondary: #34AD54;
+    --light: #EEF9FF;
+    --dark: #091E3E;
+
+}
+
+
+/***================================================ Spinner ================================================***/
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    margin: 100px auto;
+    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+    0% {
+        -webkit-transform: perspective(120px)
+    }
+
+    50% {
+        -webkit-transform: perspective(120px) rotateY(180deg)
+    }
+
+    100% {
+        -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+    }
+}
+
+@keyframes sk-rotateplane {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+    }
+
+    50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+    }
+
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
+
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/***===================================================== Heading ======================================================***/
+/* Gradient Text Heading */
+.gradient-text {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0%
+    }
+
+    100% {
+        background-position: 100%
+    }
+}
+
+/* Typing Text */
+#typed-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Custom Buttons with Glow */
+.custom-btn {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+}
+
+/* Primary Glow Button */
+.btn-primary-glow {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    border: none;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(101, 63, 255, 0.6);
+}
+
+.btn-primary-glow:hover {
+    box-shadow: 0 0 25px rgba(101, 63, 255, 1);
+    transform: scale(1.05);
+}
+
+/* Outline Light Glow Button */
+.btn-outline-light-glow {
+    color: #fff;
+    border: 2px solid #fff;
+    background: transparent;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline-light-glow:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+    transform: scale(1.05);
+}
+
+/* Optional: Smooth transitions for all buttons */
+.custom-btn:hover {
+    cursor: pointer;
+}
+
+
+
+
+/***=============================================================== Navbar ========================================================================***/
+
+/* === Multi-color Gradient Text Utility === */
+.text-gradient {
+    background: linear-gradient(90deg, #00c9ff, #92fe9d, #f5576c);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* === Navbar Brand Styling === */
+.navbar-dark .navbar-brand h1 {
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    font-size: 28px;
+    background: linear-gradient(135deg, #ff6a00, #ee0979, #00c9ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* === Desktop Nav Links with Gradient Hover === */
+.navbar-dark .navbar-nav .nav-link {
+    font-family: 'Poppins', sans-serif;
+    margin-left: 25px;
+    padding: 30px 0;
+    color: #700ab4;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    background: linear-gradient(90deg, #ff6a00, #ee0979, #00c9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* === Underline Hover Effect === */
+.navbar-dark .navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 10px;
+    left: 50%;
+    background: linear-gradient(to right, #00c9ff, #ee0979, #f5576c);
+    transition: all 0.4s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover::before,
+.navbar-dark .navbar-nav .nav-link.active::before {
+    width: 100%;
+    left: 0;
+}
+
+/* Dropdown Menu */
+.navbar .dropdown-menu {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 12px 0;
+    border: none;
+    min-width: 220px;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar .nav-item.dropdown:hover .dropdown-menu,
+.navbar .nav-item.dropdown:focus-within .dropdown-menu,
+.navbar .nav-item.dropdown.show .dropdown-menu {
+    transform: scaleY(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+    padding: 10px 20px;
+    font-weight: 500;
+    color: #333;
+    transition: 0.3s ease;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+    background: linear-gradient(to right, #00c9ff, #ee0979, #f5576c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* === Mobile Nav Styling === */
+@media (max-width: 991.98px) {
+    .navbar-dark {
+        background: #ffffff !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-dark .navbar-brand h1 {
+        display: none;
+    }
+
+    .navbar-dark .navbar-brand img {
+        height: 36px;
+        width: auto;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 14px 0;
+        margin-left: 0;
+        color: #222 !important;
+        font-weight: 600;
+        font-size: 16px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover {
+        background: linear-gradient(90deg, #00c9ff, #92fe9d, #f5576c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .navbar-dark .navbar-toggler {
+        border: none;
+        color: #00c9ff !important;
+        margin-left: auto;
+    }
+
+    .navbar-dark .navbar-collapse {
+        background: #fdfdfd;
+        padding: 10px 15px;
+        border-radius: 8px;
+    }
+
+    .navbar {
+        padding: 10px 15px;
+    }
+}
+
+/* === Sticky Navbar === */
+.sticky-top.navbar-dark {
+    background: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sticky-top.navbar-dark .navbar-nav .nav-link {
+    color: #1a1a1a;
+}
+
+.navbar-dark.sticky-top::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to right, #00c9ff, #ee0979, #f5576c);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* ===================== TOPBAR STYLING ===================== */
+
+.container-fluid.bg-dark.px-5.d-none.d-lg-block {
+    background: linear-gradient(135deg, #111827, #1f2937);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.container-fluid .text-light {
+    color: #e0e0e0 !important;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.container-fluid .text-light i {
+    color: #00c9a7;
+    font-size: 14px;
+}
+
+.container-fluid .btn-sm-square {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: #ffffff !important;
+    font-size: 14px;
+    line-height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.container-fluid .btn-sm-square:hover {
+    background: linear-gradient(135deg, #00c9ff, #ee0979, #ff6a00);
+    border-color: transparent;
+    color: #ffffff !important;
+    transform: scale(1.1);
+}
+
+.container-fluid .d-inline-flex.align-items-center {
+    gap: 20px;
+    height: auto;
+}
+
+@media (max-width: 991.98px) {
+    .container-fluid.bg-dark.px-5.d-none.d-lg-block {
+        display: none !important;
+    }
+}
+
+
+/* ============================== FACT BOX CONTAINER ================================ */
+.facts .shadow {
+    border-radius: 20px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.facts .shadow:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ==== ICON CIRCLE ==== */
+.facts .shadow > .bg-white,
+.facts .shadow > .bg-primary {
+    width: 60px;
+    height: 60px;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #ffffff, #e3e8f0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== ICON STYLE ==== */
+.facts i {
+    font-size: 26px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6a00, #ee0979, #00c9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* ==== TEXT SIZES ==== */
+.facts h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.facts h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+
+
+/***=============================================== Carousel ================================================***/
+
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(9, 30, 62, .7);
+    z-index: 1;
+}
+
+@media (max-width: 576px) {
+    .carousel-caption h5 {
+        font-size: 14px;
+        font-weight: 500 !important;
+    }
+
+    .carousel-caption h1 {
+        font-size: 30px;
+        font-weight: 600 !important;
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+
+/*========================================== ABOUT SECTION: ICON STYLE =============================*/
+
+.about-section i {
+    font-size: 18px;
+    background: linear-gradient(45deg, #ff6a00, #ee0979, #00c9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: bold;
+}
+
+/* ABOUT TICK POINTS */
+.about-section h5 i {
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.about-section h5:hover i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* CALL TO ACTION BOX */
+.about-section .bg-primary {
+    background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc) !important;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 82, 212, 0.4);
+}
+
+/* PHONE ICON CIRCLE */
+.about-section .bg-primary i {
+    font-size: 24px;
+}
+
+/* QUOTE BUTTON */
+.about-section .btn-primary {
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    border: none;
+    font-weight: 600;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(238, 9, 121, 0.4);
+}
+
+.about-section .btn-primary:hover {
+    background: linear-gradient(45deg, #ee0979, #ff6a00);
+    box-shadow: 0 8px 20px rgba(238, 9, 121, 0.6);
+}
+
+/* === About Section: Button Style === */
+.about-section .btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px; /* Fully rounded shape */
+    border: none;
+    outline: none;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    color: #fff;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 15px rgba(238, 9, 121, 0.3);
+    text-decoration: none;
+}
+
+.about-section .btn:hover {
+    background: linear-gradient(45deg, #ee0979, #ff6a00);
+    box-shadow: 0 10px 25px rgba(238, 9, 121, 0.6);
+    transform: translateY(-2px);
+}
+
+.about-section img {
+    border-radius: 15px;
+}
+
+/* ================================== Features Section =========================== */
+.features-section .bg-primary {
+    background: linear-gradient(135deg, #007bff, #00c6ff) !important;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+    border-radius: 15px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features-section .bg-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.5);
+}
+
+/* === Icons inside boxes === */
+.features-section i {
+    font-size: 26px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6a00, #ee0979, #00c9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+}
+
+/* === Feature Text Headings === */
+.features-section h4 {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* === Paragraph Style === */
+.features-section p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* === Feature Image === */
+.features-section img {
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Subtitle: Why Choose Us */
+.section-subtitle {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* Main Heading: We Are Here... */
+.section-main-heading {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #222;
+    background: linear-gradient(90deg, #ff6a00, #ee0979, #00c9ff, #43e97b);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 8s linear infinite;
+}
+
+/* Optional gradient animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+
+
+/***================================   Section Title ========================================= ***/
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 5px;
+    left: 0;
+    bottom: 0;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.section-title.text-center::before {
+    left: 50%;
+    margin-left: -75px;
+}
+
+.section-title.section-title-sm::before {
+    width: 90px;
+    height: 3px;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 5px;
+    bottom: 0px;
+    background: #FFFFFF;
+    -webkit-animation: section-title-run 5s infinite linear;
+    animation: section-title-run 5s infinite linear;
+}
+
+.section-title.section-title-sm::after {
+    width: 4px;
+    height: 3px;
+}
+
+.section-title.text-center::after {
+    -webkit-animation: section-title-run-center 5s infinite linear;
+    animation: section-title-run-center 5s infinite linear;
+}
+
+.section-title.section-title-sm::after {
+    -webkit-animation: section-title-run-sm 5s infinite linear;
+    animation: section-title-run-sm 5s infinite linear;
+}
+
+@-webkit-keyframes section-title-run {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 145px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@-webkit-keyframes section-title-run-center {
+    0% {
+        left: 50%;
+        margin-left: -75px;
+    }
+
+    50% {
+        left: 50%;
+        margin-left: 45px;
+    }
+
+    100% {
+        left: 50%;
+        margin-left: -75px;
+    }
+}
+
+@-webkit-keyframes section-title-run-sm {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 85px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+/* =============================================================== 🔧 Service Section Styles============================================================== */
+
+/*----------------------- Service Card Base ----------------------*/
+.service-item {
+    position: relative;
+    padding: 40px 30px 50px;
+    background: linear-gradient(135deg, #f5f7fa, #ffffff);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+    height: 100%;
+    min-height: 350px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*---------------------- Hover Effect ----------------------------*/
+.service-item:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, #e0f7ff, #f8fdff);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/*--------------------- Icon Wrapper -----------------------------*/
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    transform: rotate(-45deg);
+    background: #fff;
+}
+
+/*------------------ Icon Gradient Style -------------------------*/
+.service-icon i {
+    font-size: 32px;
+    font-weight: bold;
+    transform: rotate(45deg);
+    background: linear-gradient(45deg, #ff6a00, #ee0979, #00c9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+}
+
+/*----------------- Icon Backgrounds per Card --------------------*/
+.icon-1 {
+    background: linear-gradient(45deg, #ff4e50, #f9d423);          /* Graphics */
+}
+.icon-2 {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);          /* Web Dev */
+}
+.icon-3 {
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);          /* Digital Marketing */
+}
+.icon-4 {
+    background: linear-gradient(45deg, #f7971e, #ffd200);          /* Software Dev */
+}
+.icon-5 {
+    background: linear-gradient(45deg, #43cea2, #185a9d);          /* Game Dev */
+}
+.icon-6 {
+    background: linear-gradient(45deg, #fc5c7d, #6a82fb);          /* Mobile App Dev */
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
+}
+.icon-2 {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+}
+.icon-3 {
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+
+/*------------------ "View Service" Button -----------------------*/
+.service-item .btn-view {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    align-self: center;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 91, 187, 0.6);
+}
+
+.service-item .btn-view:hover {
+    background: linear-gradient(45deg, #0056b3, #003f7f);
+    box-shadow: 0 8px 20px rgba(0, 91, 187, 0.9);
+}
+
+/*------------------ "View All Services" Button ------------------*/
+.view-all-btn {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.view-all-btn .btn {
+    padding: 14px 40px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 20px rgba(249, 212, 35, 0.5);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.view-all-btn .btn:hover {
+    background: linear-gradient(45deg, #f9d423, #ff4e50);
+    box-shadow: 0 10px 30px rgba(249, 212, 35, 0.8);
+}
+
+
+/*------------------ Static Gradient Heading ---------------------*/
+.gradient-fixed-heading {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ff6a00, #ee0979, #00c9ff, #43e97b);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+}
+
+/*------------------ Typing Animation Heading --------------------*/
+.gradient-heading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ff6a00, #ee0979, #00c9ff, #43e97b);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-align: center;
+    animation: gradientShift 6s linear infinite;
+    display: inline-block;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+
+/***===================================================== Testimonial =====================================================***/
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-item .testimonial-item,
+.testimonial-carousel .owl-item.center .testimonial-item * {
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item {
+    background: var(--primary) !important;
+    border-color: var(--secondary) !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item .position-absolute {
+    background: var(--secondary) !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item * {
+    color: #FFFFFF;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item h6 {
+    color: var(--dark) !important;
+}
+
+.testimonial-carousel .owl-dots {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    background: #DDDDDD;
+    border-radius: 15px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    width: 30px;
+    background: var(--primary);
+}
+
+
+/***=============================================================== Team =======================================================***/
+.team-item {
+    transition: .5s;
+}
+
+.team-social {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.team-social a.btn {
+    position: relative;
+    margin: 0 3px;
+    margin-top: 100px;
+    opacity: 0;
+}
+
+.team-item:hover {
+    box-shadow: 0 0 30px #DDDDDD;
+}
+
+.team-item:hover .team-social {
+    background: rgba(9, 30, 62, .7);
+}
+
+.team-item:hover .team-social a.btn:first-child {
+    opacity: 1;
+    margin-top: 0;
+    transition: .3s 0s;
+}
+
+.team-item:hover .team-social a.btn:nth-child(2) {
+    opacity: 1;
+    margin-top: 0;
+    transition: .3s .05s;
+}
+
+.team-item:hover .team-social a.btn:nth-child(3) {
+    opacity: 1;
+    margin-top: 0;
+    transition: .3s .1s;
+}
+
+.team-item:hover .team-social a.btn:nth-child(4) {
+    opacity: 1;
+    margin-top: 0;
+    transition: .3s .15s;
+}
+
+.team-item .team-img img,
+.blog-item .blog-img img {
+    transition: .5s;
+}
+
+.team-item:hover .team-img img,
+.blog-item:hover .blog-img img {
+    transform: scale(1.15);
+}
+
+/*============================  Footer Container =================================*/
+
+/* ========= FOOTER STYLES ========= */
+
+/* General */
+.footer-about h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.footer-about p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Input + Button */
+.footer-about input[type="email"] {
+  font-size: 14px;
+  border: none;
+  border-radius: 50px 0 0 50px;
+  background-color: #f8f9fa;
+}
+
+.footer-about input::placeholder {
+  color: #777;
+}
+
+.footer-about .btn-primary {
+  background: linear-gradient(135deg, #06A3DA, #0072ff);
+  border: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border-radius: 0 50px 50px 0;
+  color: #fff;
+}
+
+.footer-about .btn-primary:hover {
+  background: linear-gradient(135deg, #0072ff, #06A3DA);
+  transform: scale(1.05);
+}
+
+/* Footer Background */
+.bg-dark {
+  background-color: #0e0e1a !important;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+/* Gradient Buttons (Social) */
+.btn-gradient {
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  color: white !important;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to right, #24c6dc, #514a9d);
+  transform: scale(1.1);
+}
+
+/* Social Icon Buttons */
+.btn-square {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+}
+
+/* Quick Links & Services */
+.link-animated a {
+  transition: 0.3s;
+}
+
+.link-animated a:hover {
+  padding-left: 8px;
+  color: #00c6ff !important;
+}
+
+/* Toast Message */
+.toast-msg {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer Bottom */
+.container-fluid[style*="background: #0b0b13"] {
+  background-color: #0b0b13 !important;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.container-fluid[style*="background: #0b0b13"] p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.container-fluid[style*="background: #0b0b13"] a {
+  color: #00c6ff;
+  text-decoration: none;
+  border-bottom: 1px dotted #00c6ff;
+}
+
+.container-fluid[style*="background: #0b0b13"] a:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  z-index: 999;
+  right: 15px;
+  bottom: 60px;
+  font-size: 20px;
+  border-radius: 50%;
+  padding: 10px 15px;
+  display: none;
+  background: #0072ff;
+  color: white;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 114, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  background: #00c6ff;
+  transform: scale(1.1);
+}
+
+
+/* Responsive Tweaks */
+@media (max-width: 767px) {
+  .footer-about {
+    text-align: center;
+  }
+
+  .footer-about form .input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer-about input.form-control,
+  .footer-about .btn {
+    border-radius: 50px !important;
+    margin-top: 10px;
+  }
+
+  .btn-square {
+    margin-bottom: 10px;
+  }
+
+  .back-to-top {
+    bottom: 80px;
+  }
+}
+
+/* ==================== Quote Section Styling ==================== */
+.section-title h5 {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.section-title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+}
+
+/* Icon Box Left Side */
+.bg-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Phone Icon Container */
+.bg-primary .fa {
+    font-size: 24px;
+}
+
+/* Left Icon Text Block */
+.ps-4 h5 {
+    font-weight: 600;
+    color: #333;
+}
+
+.ps-4 h4 {
+    font-weight: 700;
+}
+
+/* Contact Info Icons on Left */
+.col-sm-6 h5 i {
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 22px;
+}
+
+/* Right Side Contact Form */
+form .form-control,
+form .form-select {
+    border-radius: 10px;
+    padding-left: 15px;
+    font-size: 16px;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+form .form-control:focus,
+form .form-select:focus {
+    border: 2px solid #764ba2;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.1);
+}
+
+form textarea {
+    resize: none;
+}
+
+/* Submit Button Style */
+form .btn-dark {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    border: none;
+    font-weight: 600;
+    transition: 0.4s ease;
+    box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+}
+
+form .btn-dark:hover {
+    background: linear-gradient(135deg, #1dd1a1, #10ac84);
+    box-shadow: 0 6px 18px rgba(16, 172, 132, 0.5);
+}
+
+/* Rounded Form Box */
+.col-lg-5 .bg-primary {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 114, 255, 0.3);
+}
+
+
+
+
+/***===============================================  Miscellaneous  ================================================ ***/
+@media (min-width: 991.98px) {
+    .facts {
+        position: relative;
+        margin-top: -75px;
+        z-index: 1;
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+.bg-header {
+    background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.link-animated a {
+    transition: .5s;
+}
+
+.link-animated a:hover {
+    padding-left: 10px;
+}
+
+@media (min-width: 767.98px) {
+    .footer-about {
+        margin-bottom: -75px;
+    }

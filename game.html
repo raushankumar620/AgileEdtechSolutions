@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Development Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #0e0f1a;
+            font-family: 'Segoe UI', sans-serif;
+            color: #f0f0f0;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), #000000c2), url('img/game-bg.svg') center/cover no-repeat;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .game-card {
+            background: #1b1c2e;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            transition: transform 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-icon {
+            font-size: 2.5rem;
+            color: #00ffd5;
+            margin-bottom: 15px;
+        }
+
+        .game-img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 15px;
+        }
+
+        .game-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .game-points {
+            list-style: none;
+            padding-left: 0;
+            color: #ccc;
+        }
+
+        .game-points li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .game-points li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #00ffd5, #008080);
+            border-radius: 50%;
+            box-shadow: 0 0 8px #00ffd5;
+        }
+
+        .btn-cta {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Banner -->
+    <section class="hero-section text-white position-relative">
+        <img src="img/game2.jpg" alt="Game Development Banner"
+            class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover" style="z-index: -1; opacity: 0.4;">
+        <div class="container py-5 position-relative">
+            <h1 class="animate__animated animate__fadeInDown">Game Development Services</h1>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">
+                We build immersive games that entertain, engage, and inspire.
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- Services Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Mobile Game -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="game-card animate__animated animate__zoomIn">
+                        <img src="img/1.png" alt="Mobile Game" class="game-img" />
+                        <div class="game-title">Mobile Game Development</div>
+                        <ul class="game-points">
+                            <li>Android & iOS platform support</li>
+                            <li>2D/3D games with smooth UX</li>
+                            <li>Unity & Cocos2D engines</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PC Game -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="game-card animate__animated animate__zoomIn animate__delay-1s">
+                        <i class="fa-solid fa-computer game-icon"></i>
+                        <div class="game-title">PC / Desktop Games</div>
+                        <ul class="game-points">
+                            <li>High-performance builds for Windows</li>
+                            <li>Multiplayer & online support</li>
+                            <li>Built with Unity/Unreal Engine</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- AR/VR Game -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="game-card animate__animated animate__zoomIn animate__delay-2s">
+                        <img src="img/4.png" alt="AR VR" class="game-img" />
+                        <div class="game-title">AR / VR Game Development</div>
+                        <ul class="game-points">
+                            <li>Immersive virtual worlds</li>
+                            <li>Oculus, HTC Vive support</li>
+                            <li>ARKit & ARCore integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- HTML5 Browser Games -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="game-card animate__animated animate__zoomIn animate__delay-3s">
+                        <i class="fa-brands fa-html5 game-icon"></i>
+                        <div class="game-title">HTML5 & Web Games</div>
+                        <ul class="game-points">
+                            <li>Playable directly in browser</li>
+                            <li>Cross-platform & lightweight</li>
+                            <li>Canvas, Phaser.js, Three.js</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Game UI/UX -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="game-card animate__animated animate__zoomIn animate__delay-4s">
+                        <img src="img/3.png" alt="Game UI/UX" class="game-img" />
+                        <div class="game-title">Game UI / UX Design</div>
+                        <ul class="game-points">
+                            <li>Game menus, HUD, controls</li>
+                            <li>User flow & interface design</li>
+                            <li>Immersive user experience</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Game Testing & QA -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="game-card animate__animated animate__zoomIn animate__delay-5s">
+                        <i class="fa-solid fa-bug game-icon"></i>
+                        <div class="game-title">Game QA & Testing</div>
+                        <ul class="game-points">
+                            <li>Bug identification & reporting</li>
+                            <li>Performance testing</li>
+                            <li>Device compatibility checks</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center">
+                <a href="contact.html"
+                    class="btn btn-outline-info btn-lg btn-cta animate__animated animate__fadeInUp animate__delay-6s">
+                    Let’s Build Your Game
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
