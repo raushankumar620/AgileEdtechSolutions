@@ -13,3 +13,9 @@ Welcome to **AgileEdtechSolutions** — a dynamic educational platform built to 
 ## 📁 Project Structure
 
 raushan
+
+
+## technology use 
+-HTML 
+-CSS
+-JS
